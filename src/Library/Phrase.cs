@@ -49,18 +49,26 @@ namespace WordsPhrases
         public string GetPhrase()
         {
             StringBuilder phrase = new StringBuilder();
-
+            int contador =0;
             foreach (Word word in this.words)
             {
                 phrase.Append(" ");
                 phrase.Append(word.Text);
+                while (contador<1)
+                {
+                    contador+=1;
+                    phrase.Remove(0,1);
+                }
             }
+            
 
             string result = phrase.ToString();
+
 
             // Remueve el primer espacio que se agrega siempre
 
             return result;
-        }
+        } 
+
     }
 }
